@@ -26,6 +26,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install flask discord.py yt_dlp pynacl
 
-    - name: Run Flask app
+    - name: Run Flask app and bot
+      env:
+        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
       run: |
         nohup python flask_app.py &
+        # Ensure that `flask_app.py` is correctly handling the bot token
+        echo "Flask app and bot started."
