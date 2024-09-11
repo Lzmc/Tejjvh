@@ -5,8 +5,9 @@ from collections import deque
 import re
 import time
 import json
+import os
 
-my_secret = "MTA1MzkwMDczMDM5MTYwNTI4OQ.GTcSlH.RVouvQT-IjV9_IfHU5WIzFDKO1TCvWhxMqo5U8"
+my_secret = os.getenv('DISCORD_TOKEN') 
 
 # Intents
 intents = discord.Intents.all()
